@@ -1,0 +1,844 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+
+/* Variables CSS */
+:root {
+    --primary-color: #D00000;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --background-image: url("../imgs/infierno.jpg");
+    --font-family: 'Arial, sans-serif';
+    --font-family-decorative: 'Cursive', 'Fantasy';
+    --font-size-base: 1rem;
+    --font-size-large: 2rem;
+    --font-size-xlarge: 3rem;
+    --font-size-xxlarge: 4rem;
+    --font-size-massive: 8rem;
+    --header-height: 11vh;
+    --gap-large: 10%;
+    --gap-medium: 2rem;
+    --gap-small: 1rem;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #d32f2f;
+    --border-color: #444;
+}
+
+a {
+    color: inherit; /* Hereda el color del texto normal */
+    text-decoration: none; /* Quita el subrayado */
+}
+
+a:hover {
+    color: inherit; /* Mantiene el color al pasar el mouse */
+    text-decoration: none; /* Añade subrayado al pasar el mouse */
+}
+
+/* Reset básico */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    display: flex;
+    background-size: cover; 
+    background-position: center bottom;
+    background-attachment: fixed; 
+    font-family: var(--font-family);
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    background-image: var(--background-image);
+    padding-top: var(--header-height); /* Ajustar el padding top para evitar que el contenido se quede pegado al header */
+}
+
+/* Header */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, var(--primary-color) 100%);
+    z-index: 100;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem; /* Ajustar padding para mayor separación */
+}
+
+#header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.header__logo img {
+    max-height: calc(var(--header-height) - 4vh);
+    width: auto;
+}
+
+.header__navigation {
+    flex: 0.3 1 auto;
+    overflow-x: auto;
+    padding-left: 35%;
+}
+
+.navigation__menu {
+    padding-right: 4%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--gap-large);
+}
+
+.navigation__menu-item {
+    display: inline;
+}
+
+.navigation__menu-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: calc(var(--font-size-base) * 1.2);
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+/* Main Container */
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    padding: 1rem; /* Ajustar padding para mayor separación */
+    margin-top: 10rem; /* Ajustar el margen superior para evitar que el contenido quede pegado al header */
+}
+
+#main {
+    background: #171616;
+    padding: 1rem; /* Ajustar padding para mayor separación */
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
+    margin: 0.5rem; /* Para dar espacio alrededor del main */
+}
+
+#main__logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+    padding: 0.25rem 0;
+}
+
+.custom-text-section {
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+
+#custom-text {
+    text-align: center;
+    font-size: calc(var(--font-size-base) * 1.2);
+    line-height: 1.5;
+    color: #ffffff;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 0.5rem; /* Añadir margen para separación */
+}
+
+#Más-Abajo {
+    color: var(--primary-color);
+    font-size: var(--font-size-xlarge);
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--font-family-decorative);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+#foto-satan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    padding-left: 5rem;
+}
+
+#reviews {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--font-family-decorative);
+    padding-top: 3rem;
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 4rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
+}
+
+
+.review-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem; /* Añadir margen para separación */
+}
+
+.review-card__image {
+    display: block;
+    width: 35vh;
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.review-card__image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.7);
+}
+
+.review-card__title {
+    color: var(--primary-color);
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--font-family-decorative);
+    padding: 1rem;
+}
+
+#Novedades {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--font-family-decorative);
+    padding-top: 3rem;
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 4rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.novedades {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 60%;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.5);
+    flex: 1;
+    overflow-y: auto;
+    max-height: 50vh;
+    margin: 1rem; /* Añadir margen para separación */
+}
+
+.news-card {
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    margin: 1rem; /* Añadir margen para separación */
+}
+
+.custom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-list__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--gap-small);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: #f5f5f5;
+}
+
+.custom-list__item:last-child {
+    margin-bottom: 0;
+}
+
+.custom-list__icon {
+    width: 1.5rem; /* Tamaño del ícono */
+    height: 1.5rem;
+    margin-right: 0.5rem; /* Espaciado entre ícono y texto */
+    flex-shrink: 0; /* Evita que el ícono se reduzca */
+}
+
+
+
+.extra-content {
+    flex: 1;
+    max-width: 35%;
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: #ffffff;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.5);
+    text-align: left;
+    overflow: hidden;
+    margin: 1rem; /* Añadir margen para separación */
+}
+
+.extra-content__title {
+    color: var(--primary-color);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.extra-content__image {
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 1rem;
+}
+
+#musica {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--font-family-decorative);
+    padding-top: 3rem;
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 6rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
+}
+
+/* Búsqueda */
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.4rem; /* Ajustar el margen superior */
+}
+
+#search-bar {
+
+        width: auto; /* Ajusta el ancho según lo que necesites */
+        height: 2.5rem; /* Controla directamente la altura */
+        font-size: 1rem; /* Tamaño de fuente más pequeño */
+        padding: 0.4rem; /* Espaciado interno consistente */
+        border-radius: 0.5rem; /* Bordes redondeados */
+        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Sombra */
+        background: black;
+        color: white;
+        border: 0.1rem solid var(--primary-color); /* Opcional: Borde más fino */
+        transition: all 0.3s ease;
+        letter-spacing: 0.05rem;
+        box-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
+    
+}
+
+#album-covers {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#album-covers h2 {
+    font-size: var(--font-size-xlarge);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.album-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.album {
+    width: calc(100% / 3 - 2rem); /* Ajusta el ancho de cada álbum */
+    max-width: 200px; /* Máximo ancho de cada álbum */
+    transition: opacity 0.5s ease, transform 0.5s ease, order 0.5s ease; /* Transiciones suaves */
+    opacity: 1;
+    transform: scale(1);
+    order: 0;
+}
+
+.album.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    order: 1;
+    pointer-events: none; /* Desactiva interacciones mientras está oculto */
+}
+
+.album a {
+    text-decoration: none;
+    color: inherit; /* Mantener el color del texto */
+    display: block;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transiciones suaves */
+}
+
+.album img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transiciones suaves */
+}
+
+.album a:hover img {
+    transform: scale(1.05); /* Agrandar imagen */
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3); /* Sombra más grande */
+}
+
+.album p {
+    margin-top: 0.5rem;
+    font-size: var(--font-size-base);
+    color: var(--primary-color);
+}
+
+/* Búsqueda */
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Ajustar el margen superior */
+}
+
+#search-bar {
+    width: 50%; /* Hacer la barra de búsqueda más grande */
+    padding: 1rem; /* Aumentar el padding para hacerla más alta */
+    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+    border: 0.2rem solid var(--primary-color); /* Añadir un borde */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Añadir una sombra */
+    margin-bottom: 1rem; /* Añadir margen inferior para separación */
+    transition: box-shadow 0.3s ease; /* Transición suave para sombra */
+}
+
+#search-bar:focus {
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2); /* Sombra más grande al enfocar */
+}
+/* Paginación */
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.page-btn:hover {
+    background: var(--secondary-color);
+}
+
+#page-number {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+
+/* Estilos generales para el contenedor y sus elementos hijos */
+
+
+.title-container {
+    text-align: center;
+}
+
+.title {
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 2.5rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8); /* Usa rem para la sombra del texto */
+    padding-top: 2rem;
+}
+
+.title-line {
+    width: 60%;
+    margin: var(--gap-small) auto; /* Usa la variable para el margen */
+    border: 0.0625rem solid var(--accent-color); /* Usa rem para el borde */
+}
+
+/* Contenedor principal con Flexbox */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem; /* Usa rem para el espaciado */
+    margin-top: 1.25rem; /* Usa rem para el margen superior */
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 2;
+    background: #252525;
+    padding: var(--gap-medium); /* Usa la variable para el padding */
+    border-radius: 0.5rem; /* Usa rem para el radio del borde */
+    box-shadow: inset 0 0 0.625rem rgba(255, 0, 0, 0.3); /* Usa rem para la sombra */
+}
+
+.text-content p {
+    font-size: 1rem; /* Usa rem para el tamaño de fuente */
+    line-height: 1.6;
+    margin-bottom: var(--gap-small); /* Usa la variable para el margen */
+    color: var(--light-color);
+}
+
+/* Barra lateral */
+.sidebar {
+    flex: 1;
+    background: #2c2c2c;
+    padding: var(--gap-small);
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.625rem rgba(255, 0, 0, 0.3); /* Usa rem para la sombra */
+}
+
+.sidebar-box {
+    margin-bottom: 1.25rem;
+    height: auto;
+}
+
+.sidebar-box h2 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: var(--gap-small);
+    border-bottom: 0.125rem solid var(--accent-color);
+    padding-bottom: 0.3125rem;
+}
+
+.sidebar-box img {
+    width: 100%;
+    border-radius: 0.3125rem;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-box img:hover {
+    transform: scale(1.05);
+}
+
+/* 🔥 Ajustes para listas y alineación */
+.custom-list-sb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-box .custom-list__item_rev {
+    display: flex; /* Usa flexbox para alinear icono y texto */
+    align-items: center; /* Centra verticalmente */
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: #f5f5f5;
+    padding: 0.5rem 0; /* Añade un poco de espacio */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil entre elementos */
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+}
+
+/* Contenedor de los botones */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-small); /* Usa la variable para el espaciado */
+    margin-top: var(--gap-small); /* Usa la variable para el margen superior */
+}
+
+/* Estilos generales de los botones */
+.nav-btn {
+    font-size: var(--font-size-base); /* Usa la variable para el tamaño de fuente */
+    font-weight: bold;
+    padding: 0.625rem 1.125rem; /* Usa rem para el padding */
+    border: 0.125rem solid var(--primary-color); /* Usa la variable para el borde */
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem; /* Usa rem para el espaciado entre letras */
+}
+
+
+/* Efecto hover */
+.nav-btn:hover {
+    background: var(--accent-color); /* Usa la variable para el color de fondo al hacer hover */
+    border-color: var(--accent-color); /* Usa la variable para el borde */
+    box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.9); /* Usa rem para la sombra */
+    transform: scale(1.1);
+    color: inherit;
+}
+
+/* Estilos para el título */
+.title {
+    font-family: 'UnifrakturMaguntia', var(--font-family-decorative);
+    font-size: 2.5rem; /* Usa rem para el tamaño de fuente */
+    color: var(--accent-color);
+    text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8); /* Usa rem para la sombra del texto */
+    text-align: center;
+}
+
+/* Estilos para las estrellas de calificación */
+.rating {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 2rem; /* Usa rem para el tamaño de las estrellas */
+    margin-top: var(--gap-small); /* Usa la variable para el margen superior */
+    margin-bottom: var(--gap-small); /* Usa la variable para el margen inferior */
+}
+
+/* Estilos para la barra separadora */
+.title-line {
+    width: 80%;
+    margin: var(--gap-small) auto; /* Usa la variable para el margen */
+    border: 0.0625rem solid var(--accent-color); /* Usa rem para el borde */
+}
+
+.cancion {
+
+    flex: 1;
+
+}
+
+/* Estilos existentes para .text-content */
+.text-content {
+    font-family: Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilos para el nuevo contenedor .tracklist */
+.text-content {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilos para el nuevo contenedor .tracklist */
+.tracklist {
+    display: flex;
+    gap: var(--gap-medium); /* Usando variable para el gap */
+    margin-top: var(--gap-medium); /* Usando variable para el margen */
+}
+
+.tracklist .columna {
+    flex: 1;
+    padding-bottom: 2rem; /* Mantenido en rem */
+}
+
+.tracklist p {
+    margin: 0;
+    padding: 0.5rem 0; /* Cambiado a rem */
+    border-bottom: 1px solid var(--border-color); /* Usando variable para el color del borde */
+}
+
+.tracklist p:first-child {
+    font-weight: bold;
+    font-size: var(--font-size-large); /* Usando variable para el tamaño de fuente */
+    padding-top: var(--gap-small); /* Usando variable para el padding */
+    padding-bottom: var(--gap-small); /* Usando variable para el padding */
+    border-bottom: 2px solid var(--accent-color); /* Usando variable para el color del borde */
+    color: var(--text-color); /* Usando variable para el color del texto */
+}
+
+.tracklist .canción {
+    font-family: var(--font-family);
+    color: var(--text-color); /* Usando variable para el color del texto */
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.tracklist .columna p:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para .lineup */
+.lineup {
+    display: flex;
+    gap: var(--gap-medium); /* Usando variable para el gap */
+    margin-top: var(--gap-medium); /* Usando variable para el margen */
+}
+
+.lineup p {
+    margin: 0;
+    padding: 0.5rem 0; /* Cambiado a rem */
+    border-bottom: 1px solid var(--border-color); /* Usando variable para el color del borde */
+}
+
+.lineup .columna p:last-child {
+    border-bottom: none;
+}
+
+.lineup .columna {
+    flex: 1;
+    padding-bottom: 2rem; /* Mantenido en rem */
+}
+
+.lineup .miembros-p {
+    font-family: var(--font-family);
+    color: var(--text-color); /* Usando variable para el color del texto */
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+    background-color: rgba(209, 29, 29, 0.866); /* Mantenido el color específico */
+    text-align: center;
+}
+
+.lineup .miembro {
+    font-family: var(--font-family);
+    color: var(--text-color); /* Usando variable para el color del texto */
+    width: 100%;
+    max-width: 80%; /* Cambiado a porcentaje */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+
+/* Footer */
+#footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 3rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer__section {
+    flex: 1;
+    max-width: 20rem;
+    text-align: center;
+}
+
+.footer__section.central {
+    text-align: center;
+}
+
+.footer__section-title {
+    border-bottom: 0.2rem solid #ffffff;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.footer__section-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__section-list-item {
+    margin: 1rem 0;
+}
+
+.footer__section-list-item a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer__section-list-item a:hover {
+    text-decoration: underline;
+}
+
+.footer__contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__contact-item {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.footer__social {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer__social-item {
+    margin: 0 1rem;
+}
+
+.footer__bottom {
+    border-top: 0.1rem solid #ffffff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+#no-results {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-align: center;
+}
