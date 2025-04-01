@@ -94,21 +94,26 @@ body {
 }
 
 .header__navigation {
-    flex: 0.3 1 auto;
-    overflow-x: auto;
-    padding-left: 35%;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se acomoden en varias líneas si es necesario */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea los botones verticalmente */
+    gap: 10px; /* Espacio entre botones */
 }
 
 .navigation__menu {
-    padding-right: 4%;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: var(--gap-large);
+    flex-wrap: wrap;  /* Permite que los botones bajen si es necesario */
+    justify-content: center; /* Distribuye los botones correctamente */
+    max-width: 100%;  /* Evita que crezca demasiado */
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; /* Evita la barra de desplazamiento */
 }
 
 .navigation__menu-item {
-    display: inline;
+    white-space: nowrap;  /* Evita que los textos se dividan en varias líneas */
+    padding: 10px;
 }
 
 .navigation__menu-link {
@@ -854,15 +859,29 @@ color: var(--accent-color);
 text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
 }
 
-#image-input{
-    width: 50%; /* Hacer la barra de búsqueda más grande */
-    padding: 1rem; /* Aumentar el padding para hacerla más alta */
-    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
-    border: 0.2rem solid var(--primary-color); /* Añadir un borde */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Añadir una sombra */
-    margin-bottom: 1rem; /* Añadir margen inferior para separación */
-    transition: box-shadow 0.3s ease; /* Transición suave para sombra */
+.add-image {
+    font-size: var(--font-size-base); /* Usa la variable para el tamaño de fuente */
+    font-weight: bold;
+    padding: 0.625rem 1.125rem; /* Usa rem para el padding */
+    border: 0.125rem solid var(--primary-color); /* Usa la variable para el borde */
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem; /* Usa rem para el espaciado entre letras */
+    height: 60px;
+    border-left: none;
+}
+
+
+/* Efecto hover */
+.add-image:hover {
+    background: var(--accent-color); /* Usa la variable para el color de fondo al hacer hover */
+    border-color: var(--accent-color); /* Usa la variable para el borde */
+    box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.9); /* Usa rem para la sombra */
+    transform: scale(1.1);
+    color: inherit;
 }
 
 #galleryofsuicide {
@@ -870,24 +889,14 @@ text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
     justify-content: center;
     margin-top: 0.4rem; /* Ajustar el margen superior */
 }
-.swiper {
-    width: 80%;
-    padding: 50px 0;
-}
-.swiper-slide {
-    background: #333;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform-origin: center;
-}
-.swiper-slide img {
-    max-width: 100px;
-}
-.swiper-button-next, .swiper-button-prev {
-    color: gold;
+
+ .image-input {
+    width: 50%; /* Hacer la barra de búsqueda más grande */
+    padding: 1rem; /* Aumentar el padding para hacerla más alta */
+    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+    border: 0.2rem solid var(--primary-color); /* Añadir un borde */
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); /* Añadir una sombra */
+    margin-bottom: 1rem; /* Añadir margen inferior para separación */
+    transition: box-shadow 0.3s ease; /* Transición suave para sombra */
+    border-right: none;
 }
