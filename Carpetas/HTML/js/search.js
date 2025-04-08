@@ -28,3 +28,23 @@ document.getElementById('search-bar').addEventListener('input', function() {
         noResultsMessage.style.display = 'block';
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const genreFilter = document.getElementById("genre-filter");
+    const albums = document.querySelectorAll(".album");
+  
+    genreFilter.addEventListener("change", () => {
+      const selectedGenre = genreFilter.value;
+  
+      albums.forEach(album => {
+        const albumGenre = album.dataset.genero;
+  
+        if (selectedGenre === "all" || albumGenre === selectedGenre) {
+          album.style.display = "";
+        } else {
+          album.style.display = "none";
+        }
+      });
+    });
+  });
+  

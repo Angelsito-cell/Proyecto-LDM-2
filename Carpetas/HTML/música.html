@@ -25,7 +25,28 @@
         <main id="main">
             <h1 id="musica"> 𝕸ú𝖘𝖎𝖈𝖆</h1>
             <form id="search-form">
-                <input type="text" id="search-bar" placeholder="Buscar...">
+                <div class="search-group">
+                    <input type="text" id="search-bar" placeholder="Buscar...">
+                    <select id="genre-filter">
+                        <option value="all">Todos los géneros</option>
+                        <option value="heavy-metal">Heavy Metal</option>
+                        <option value="thrash-metal">Thrash Metal</option>
+                        <option value="death-metal">Death Metal</option>
+                        <option value="black-metal">Black Metal</option>
+                        <option value="sludge-metal">Sludge Metal</option>
+                        <option value="gothic-metal">Gothic Metal</option>
+                        <option value="industrial">Industrial Metal</option>
+                        <option value="doom-metal">Doom Metal</option>
+                        <option value="nu-metal">Nu Metal</option>
+                        <option value="glam-metal">Glam Metal</option>
+                        <option value="punk">Punk</option>
+                        <option value="post-punk">Post Punk</option>
+                        <option value="rock">Rock</option>
+                        <option value="grunge">Grunge</option>
+                        <option value="ost">Soundtrack</option>
+                        <option value="indie">Indie</option>
+                    </select>
+                </div>
             </form>
             <section class="custom-text-section">
                 <p id="custom-text">
@@ -37,67 +58,67 @@
 
                     <section id="album-covers">
                         <ul class="album-row">
-                            <li class="album">
+                            <li class="album" data-genero="death-metal">
                                 <a href="review-sbg.html">
                                     <img src="../imgs/sbg.jpg" alt="Scream Bloody Gore (Death)">
                                     <p>Scream Bloody Gore <br>(Death)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="thrash-metal">
                                 <a href="review-m16.html">
                                     <img src="../imgs/m16.jpg" alt="M16 de Sodom">
                                     <p>M-16 <br>(Sodom)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="sludge-metal">
                                 <a href="review-wtksp.html">
                                     <img src="../imgs/wtksp.jpg" alt="Acid Bath">
                                     <p>When the Kite String Pops <br>(Acid Bath)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="rock"> 
                                 <a href="review-yma.html">
                                     <img src="../imgs/yma.jpg" alt="Yo Minoria Absoluta de Extremoduro">
                                     <p>Yo, Minoria Absoluta <br>(Extremoduro)</p>
                                 </a>
                             </li>
-                            <li class="album">
-                                <a href="review-iowa.html">
+                            <li class="album" data-genero="nu-metal">
+                                <a href="review-iowa.html" >
                                     <img src="../imgs/iowa.jpg" alt="IOWA de Slipknot">
                                     <p>IOWA <br>(Slipknot)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="punk">
                                 <a href="review-misfits.html">
                                     <img src="../imgs/misfits.jpg" alt="Misfits Collection">
                                     <p>Collection <br>(Misfits)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="post-punk">
                                 <a href="review-up.html">
                                     <img src="../imgs/up.jpeg" alt="Unkown Pleasures de Joy Division">
                                     <p>Unkown Pleasures <br>(Joy Division)</p>
                                 </a>
                             </li>
-                            <li class="album">
-                                <a href="review-endorama.html">
+                            <li class="album" data-genero="gothic-metal">
+                                <a href="review-endorama.html" >
                                     <img src="../imgs/endorama.jpg" alt="Endorama de Kreator">
                                     <p>Endorama <br>(Kreator)</p>
                                 </a>
                             </li>
-                            <li class="album">
-                                <a href="review-nr.html">
+                            <li class="album" data-genero="industrial">
+                                <a href="review-nr.html" >
                                     <img src="../imgs/nr.jpg" alt="No Regrets de Dope">
                                     <p>No Regrets <br>(Dope)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="death-metal">
                                 <a href="review-fmts.html">
                                     <img src="../imgs/fmts.jpg" alt="From Mars to Sirius de Gojira">
                                     <p>From Mars to Sirius <br>(Gojira)</p>
                                 </a>
                             </li>
-                            <li class="album">
+                            <li class="album" data-genero="heavy-metal">
                                 <a href="review-lad.html">
                                     <img src="../imgs/lad.jpg" alt="Live after death de Iron Maiden">
                                     <p>Live After Death
@@ -105,14 +126,113 @@
                                 </a>
                             </li>
 
-                            <li class="album">
+                            <li class="album" data-genero="death-metal">
                                 <a href="review-sbg.html">
-                                    <img src="../imgs/sop.jpg" alt="The Sound of Perseverance (Death)">
+                                    <img src="../imgs/sop.jpg" alt="The Sound Of Perseveracnce (Death)">
                                     <p>The Sound of Perseverance
                                         <br>(Death)
                                     </p>
                                 </a>
                             </li>
+                            <li class="album" data-genero="black-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/Deathcrush.jpeg" alt="Deathcrush (Mayhem)">
+                                    <p>Deathcrush
+                                        <br>(Mayhem)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="industrial">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/pb.jpeg" alt="Point Black (Nailbomb)">
+                                    <p>Point Black
+                                        <br>(Nailbomb)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="rock">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/CD.jpeg" alt="Chinese Democracy (Guns N' Roses)">
+                                    <p>Chinese Democracy 
+                                        <br>(Guns N' Roses)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="rock">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/QueenII.jpeg" alt="QueenII (Queen)">
+                                    <p>QueenII
+                                        <br>(Queen)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="sludge-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/demo.jpeg" alt="D.E.M.O (Outta Pocket)">
+                                    <p>D.E.M.O
+                                        <br>(Outta Pocket)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="sludge-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/dtp.jpeg" alt="Dystopia (Dystopia)">
+                                    <p>Dystopia
+                                        <br>(Dystopia)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="doom-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/mor.jpeg" alt="Master of Reality (Black Sabbath)">
+                                    <p>Master of Reality
+                                        <br>(Black Sabbath)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="doom-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/dope.jpeg" alt="Dopethrone (Electric Wizard)">
+                                    <p>Dopethrone
+                                        <br>(Electric Wizard)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="doom-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/edm.jpeg" alt="Epicus Doomicus Metallicus  (Candlemass)">
+                                    <p>Epicus Doomicus Metallicus 
+                                        <br>(Candlemass)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="black-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/th.jpeg" alt="Transilvanyan Hunger  (Darkthrone)">
+                                    <p>Transilvanyan Hunger
+                                        <br>(Darkthrone)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="thrash-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/bm.png" alt="Black Metal  (Venom)">
+                                    <p>Black Metal
+                                        <br>(Venom)
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="album" data-genero="black-metal">
+                                <a href="review-sbg.html">
+                                    <img src="../imgs/bathory.jpeg" alt="Bathory (Bathory)">
+                                    <p>Bathory
+                                        <br>(Bathory)
+                                    </p>
+                                </a>
+                            </li>
+
+                            
+                            
                         </ul>
                     </section>
                     <section id="pagination">
@@ -121,7 +241,7 @@
                         <button id="next-page" class="page-btn">⟩</button>
                     </section>
             </section>
-           <script src="../js/script.js"></script>
+           <script src="js/search.js"></script>
 
     </main>
 </section>

@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Eliminar";
+                deleteButton.classList.add("delete-btn"); // Agregar clase CSS
                 deleteButton.addEventListener("click", () => {
                     galleryContainer.removeChild(imageContainer);
                 });

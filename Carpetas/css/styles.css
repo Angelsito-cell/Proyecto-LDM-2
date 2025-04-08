@@ -900,3 +900,75 @@ text-shadow: 0.125rem 0.125rem 0.625rem rgba(255, 0, 0, 0.8);
     transition: box-shadow 0.3s ease; /* Transición suave para sombra */
     border-right: none;
 }
+
+.delete-btn {
+    font-size: var(--font-size-base); /* Usa la variable para el tamaño de fuente */
+    font-weight: bold;
+    padding: 0.625rem 1.125rem; /* Usa rem para el padding */
+    border: 0.125rem solid var(--primary-color); /* Usa la variable para el borde */
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem; /* Usa rem para el espaciado entre letras */
+    height: 60px;
+    border-left: none;
+
+}
+
+
+.delete-btn:hover {
+    background: var(--accent-color); /* Usa la variable para el color de fondo al hacer hover */
+    border-color: var(--accent-color); /* Usa la variable para el borde */
+    box-shadow: 0 0 1.5rem rgba(255, 0, 0, 0.9); /* Usa rem para la sombra */
+    transform: scale(1.1);
+    color: inherit;
+ 
+}
+/* Contenedor del input + filtro */
+.search-group {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px red;
+    margin: 0 auto;
+      
+  }
+  
+  /* Input de búsqueda */
+  #search-bar {
+    flex: 2;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #111;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  /* Selector de filtro */
+  #genre-filter {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-left: 1px solid #222;
+  }
+  
+  /* Efecto glow como el resto */
+  #genre-filter:hover {
+    box-shadow: 0 0 8px red;
+    background-color: #1a1a1a;
+  }
+  
