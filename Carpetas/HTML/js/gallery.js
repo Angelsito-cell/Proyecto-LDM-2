@@ -71,33 +71,44 @@ document.addEventListener("DOMContentLoaded", () => {
     function addImageToGallery(url, title = "", description = "") {
       const container = document.createElement("section");
       container.classList.add("gallery-item");
-  
+    
       const img = document.createElement("img");
       img.src = url;
       img.alt = title;
       img.style.width = "200px";
-  
+    
       const titleElement = document.createElement("h3");
       titleElement.textContent = title;
-  
+    
       const descElement = document.createElement("p");
       descElement.textContent = description;
-  
+    
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Eliminar";
       deleteButton.classList.add("delete-btn");
-  
-      deleteButton.addEventListener("click", () => {
+    
+      deleteButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que al hacer clic en eliminar se abra el modal
         galleryContainer.removeChild(container);
         savedImages = savedImages.filter(obj => obj.url !== url);
         localStorage.setItem("galleryImages", JSON.stringify(savedImages));
       });
-  
+    
+      // 🆕 Mostrar modal al hacer clic en el contenedor
+      container.addEventListener("click", () => {
+        document.getElementById("detail-img").src = url;
+        document.getElementById("detail-title").textContent = title;
+        document.getElementById("detail-description").textContent = description;
+        document.getElementById("detail-modal").classList.remove("hidden");
+      });
+    
+      // Añadir todo al contenedor
       container.appendChild(img);
       if (title) container.appendChild(titleElement);
       if (description) container.appendChild(descElement);
       container.appendChild(deleteButton);
       galleryContainer.appendChild(container);
     }
-  });
-  
+    document.getElementById("close-detail").addEventListener("click", () => {
+      document.getElementById("detail-modal").classList.add("hidden");
+    })});
