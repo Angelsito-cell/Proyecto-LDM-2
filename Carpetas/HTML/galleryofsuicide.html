@@ -11,7 +11,9 @@
 <body>
 <header id="header">
     <span class="header__logo">
-        <img src="../imgs/logo.png" alt="logo de la página">
+        <a href="index.html">
+            <img src="../imgs/logo.png" alt="logo de la página" >
+        </a>
     </span>
     <nav class="header__navigation">
         <ul class="navigation__menu">
@@ -33,6 +35,32 @@
         <div id="gallery-container"></div>
     </main>
 </section>
+<section id="preview-modal" class="modal hidden">
+    <section class="modal-content" role="dialog" aria-modal="true" aria-labelledby="preview-heading">
+      <h2 id="preview-heading">Previsualización</h2>
+  
+      <figure>
+        <img id="preview-img" src="" alt="Previsualización de imagen">
+      </figure>
+  
+      <label for="image-title">Título:</label>
+      <input type="text" id="image-title" placeholder="Título de la imagen">
+  
+      <label for="image-description">Descripción:</label>
+      <textarea id="image-description" placeholder="Descripción (opcional)"></textarea>
+  
+      <label class="fake-captcha">
+        <input type="checkbox" id="captcha-check">
+        No soy un robot
+      </label>
+  
+      <section class="modal-buttons">
+        <button id="confirm-button">Confirmar publicación</button>
+        <button id="cancel-button">Cancelar</button>
+      </section>
+    </section>
+  </section>
+  
 
 <footer id="footer">
     <section class="footer__content">
