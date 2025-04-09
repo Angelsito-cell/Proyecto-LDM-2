@@ -30,21 +30,33 @@ document.getElementById('search-bar').addEventListener('input', function() {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const genreFilter = document.getElementById("genre-filter");
-    const albums = document.querySelectorAll(".album");
-  
-    genreFilter.addEventListener("change", () => {
-      const selectedGenre = genreFilter.value;
-  
-      albums.forEach(album => {
-        const albumGenre = album.dataset.genero;
-  
-        if (selectedGenre === "all" || albumGenre === selectedGenre) {
-          album.style.display = "";
-        } else {
-          album.style.display = "none";
-        }
-      });
+  const genreFilter = document.getElementById("genre-filter");
+  const albums = document.querySelectorAll(".album");
+  const noResultsMessage = document.getElementById("no-results");
+
+  genreFilter.addEventListener("change", () => {
+    const selectedGenre = genreFilter.value;
+    let visibleCount = 0;
+
+    albums.forEach(album => {
+      const albumGenre = album.dataset.genero;
+
+      if (selectedGenre === "all" || albumGenre === selectedGenre) {
+        album.style.display = "inline-block";
+        visibleCount++;
+      } else {
+        album.style.display = "none";
+      }
     });
+
+    if (visibleCount === 0) {
+      noResultsMessage.classList.remove("hidden");
+      alert("Lo siento, no he reseñado nada así todavía :(");
+    } else {
+      noResultsMessage.classList.add("hidden");
+    }
   });
+});
+
+
   

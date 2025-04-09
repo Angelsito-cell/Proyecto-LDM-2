@@ -17,3 +17,5 @@ Rojo oscuro (Principal): #8B0000 Un rojo profundo y oscuro que puede ser el colo
 Negro carbón: #1C1C1C Un tono negro muy oscuro, pero no puro, que es perfecto para el fondo y para combinar con el rojo.
 
 Gris acero: #2F4F4F Un gris oscuro con un toque frío que contrasta y equilibra los tonos intensos del rojo y negro.
+
+## Funcionamiento del HTML
