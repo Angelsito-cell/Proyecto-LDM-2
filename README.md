@@ -1,3 +1,9 @@
+# ⚠️IMPORTANTE⚠️ SE INICIA SESIÓN CON:
+  - USUARIO: Alejandro_Profe777
+  - CONTRASEÑA: diseño_responsive_123
+
+
+
 # Proyecto-Lenguaje-de-Marcas-
 
 El proyecto para esta unidad 2 va a consistir en una página web para hacerle review a los álbumes/singles/recopilatorios que vaya escuchando a lo largo del tiempo o que ya haya escuchado.
@@ -251,15 +257,115 @@ albums.forEach((album) => {
 });
 ```
 
+### formulario.js
+
+Este código muestra un **modal de login** solo la primera vez que entras en la web. Te permite:
+
+- Iniciar sesión con usuario y contraseña
+- Mostrar un mensaje de error si están mal
+- Usar botones para login con Google, Facebook o X
+- Continuar sin iniciar sesión
+
+Todo queda **guardado en el navegador** para no volver a molestarte la próxima vez.
+
 ---
 
-##### ¿Para qué sirve este código?
+#### ¿Qué hace cada parte del código?
 
-- Puedes buscar álbumes por nombre con el teclado.
-- Puedes filtrar por género.
-- Si no hay resultados, te avisa con un mensaje.
-- Todo pasa al instante, sin recargar la página.
+```js
+document.addEventListener("DOMContentLoaded", () => {
+```
 
 ---
 
-¿Quieres que te lo dé también en un `README.md` para subirlo a GitHub con tu proyecto? Te lo dejo listo si quieres 💾🔥
+##### Selección de elementos del DOM
+
+```js
+const modal = document.getElementById("login-modal");
+const skip = document.getElementById("skip-login");
+const login = document.getElementById("login-btn");
+const register = document.getElementById("register-btn");
+const userInput = document.getElementById("login-user");
+const passInput = document.getElementById("login-pass");
+const errorMessage = document.getElementById("login-error");
+```
+
+---
+
+##### Mostrar el modal solo la primera vez
+
+```js
+if (!localStorage.getItem("loginDismissed")) {
+  modal.style.display = "flex";
+} else {
+  modal.style.display = "none";
+}
+```
+
+---
+
+##### Botón "Continuar sin iniciar sesión"
+
+```js
+skip.addEventListener("click", () => {
+  localStorage.setItem("loginDismissed", "true");
+  modal.style.display = "none";
+});
+```
+---
+
+##### Validación de usuario y contraseña
+
+```js
+login.addEventListener("click", () => {
+  const user = userInput.value.trim();
+  const pass = passInput.value.trim();
+```
+---
+
+##### Comparación con los datos correctos
+
+```js
+if (user === "Alejandro_Profe777" && pass === "diseño_responsive_123") {
+  alert("¡Inicio de sesión exitoso! Bienvenido, Alejandro.");
+  localStorage.setItem("loginDismissed", "true");
+  modal.style.display = "none";
+}
+```
+
+✅ Si los datos son correctos:
+- Muestra un saludo
+- Cierra el modal
+- Guarda en `localStorage` que ya ha iniciado sesión
+
+---
+
+##### Si están mal, muestra error y limpia los campos
+
+```js
+else {
+  userInput.value = "";
+  passInput.value = "";
+  errorMessage.textContent = "Nombre o contraseña incorrectos.";
+}
+```
+---
+
+##### Botón "Crear cuenta" (No lo he hecho)
+
+```js
+register.addEventListener("click", () => {
+  alert("Función de registro no implementada.");
+});
+```
+---
+
+##### Botones de redes sociales
+
+```js
+document.querySelector(".google").addEventListener("click", () => {
+  window.open("https://accounts.google.com/signin", "_blank");
+});
+```
+En definitiva
+---

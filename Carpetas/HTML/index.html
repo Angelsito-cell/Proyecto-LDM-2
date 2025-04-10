@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hell's Vault</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="js/formulario.js"></script>
 </head>
 <body>
     <header id="header">
@@ -94,6 +95,31 @@
             </section>
         </main>
     </section>
+    <section id="login-modal" class="login-modal">
+        <section class="login-box">
+          <h2>Bienvenido a Hell's Vault</h2>
+      
+          <input type="text" id="login-user" placeholder="Nombre de usuario o correo">
+          <input type="password" id="login-pass" placeholder="Contraseña">
+          <small id="login-error" class="error-message"></small>
+
+      
+          <section class="login-actions">
+            <button id="login-btn">Iniciar sesión</button>
+            <button id="register-btn">Crear cuenta</button>
+          </section>
+      
+          <p>O entra con:</p>
+          <section class="social-login">
+            <button class="social google">Google</button>
+            <button class="social facebook">Facebook</button>
+            <button class="social x">X</button>
+          </section>
+      
+          <button id="skip-login">Continuar sin iniciar sesión</button>
+        </section>
+      </section>
+
     <footer id="footer">
         <section class="footer__content">
             <section class="footer__section">
