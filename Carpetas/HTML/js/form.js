@@ -1,5 +1,4 @@
 // Selección de elementos
-// Selección de elementos
 const form = document.getElementById('search-form');
 const searchBar = document.getElementById('search-bar');
 
