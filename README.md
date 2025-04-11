@@ -512,4 +512,4 @@ function addImageToGallery(url, title = "", description = "") {
 
 Puedes ver una versión funcional del proyecto aquí:  
 
-[https://Angelsito-cell.github.io/hells-vault/](https://Angelsito-cell.github.io/hells-vault/)
+[https://Angelsito-cell.github.io/hells-vault/](https://Angelsito-cell.github.io/Proyecto-LDM-2/)
