@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const noResultsMessage = document.createElement('p');
 noResultsMessage.id = 'no-results';
 noResultsMessage.textContent = 'No se encontraron resultados.';
@@ -28,6 +30,8 @@ document.getElementById('search-bar').addEventListener('input', function() {
         noResultsMessage.style.display = 'block';
     }
 });
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const genreFilter = document.getElementById("genre-filter");
