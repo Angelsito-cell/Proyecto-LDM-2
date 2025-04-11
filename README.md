@@ -26,6 +26,103 @@ Gris acero: #2F4F4F Un gris oscuro con un toque frío que contrasta y equilibra 
 
 ## Funcionamiento del HTML
 
+Aquí explicaré más o menos como he estructurado el HTML de la página y no mucho más puesto que el HTML es la base, lo más simple y sencillo del proyecto.
+
+---
+
+## Estructura general de mi página web
+
+He diseñado y estructurado mi página web de forma **clara y organizada**, usando las etiquetas semánticas recomendadas (`header`, `main`, `section`, `footer`) para que el contenido esté bien distribuido y sea fácil de mantener.
+
+---
+
+### 1. `<header>` – Cabecera de la página
+
+En esta parte:
+
+- El **logo principal del sitio**
+- Un **menú de navegación** con enlaces:
+  - Inicio
+  - Tienda
+  - Contacto
+  - Blog
+  - Cuenta / Galería
+
+La idea es que el usuario pueda moverse rápidamente entre las secciones más importantes.
+
+---
+
+### 2. `<main>` – Contenido principal
+
+Dentro de `<main>` se encuentra todo:
+
+- Una **bienvenida con texto personalizado**, presentando el estilo del blog.
+- Un **bloque de secciones** donde:
+  - Reseñas de música
+  - Reseñas de cine
+  - Reseñas de videojuegos
+- Una **sección de novedades** con un formato tipo blog, donde aparece contenido reciente.
+
+Todo esto lo organicé en `section` y `article` para mantener una estructura clara y semántica.
+
+---
+
+### 3. Página de música (`música.html`)
+
+Es la página más completa:
+
+- Un **filtro por género musical** (metal, punk, etc.)
+- Una **barra de búsqueda** que permite encontrar álbumes por nombre
+- Los álbumes se muestran en formato de **cuadrícula**, con su portada e información
+- Hay una **paginación simple** para navegar entre más discos si se añaden
+
+---
+
+### 4. Página de galería (`gallery.html`)
+
+Una sección interactiva donde los usuarios pueden:
+
+- **Añadir imágenes** a una galería pegando una URL
+- Escribir un **título** y una **descripción**
+- Ver un **modal de confirmación** antes de publicar
+- **Eliminar imágenes** que ya no quieren mostrar
+- Y lo mejor: **todo se guarda automáticamente** usando `localStorage`, así que si vuelves a entrar, las imágenes siguen ahí
+
+---
+
+### 5. Formulario de contacto
+
+Incluye campos básicos:
+
+- Nombre
+- Email
+- Mensaje
+
+Con validación dinámica hecha en JavaScript, donde se muestran **mensajes de error si algún campo está mal** y un **mensaje de éxito si todo está correcto**.
+
+---
+
+### 6. Modal de inicio de sesión
+
+Al entrar por primera vez en la página aparece un **recuadro flotante (modal)** que pide iniciar sesión. Tiene varias opciones:
+
+- Iniciar sesión con usuario y contraseña reales (validados en JavaScript)
+- Acceder con Google, Facebook o X (redirige a sus páginas de login)
+- O continuar sin iniciar sesión (si eliges esto, **el modal no vuelve a aparecer nunca** gracias a `localStorage`)
+
+---
+
+### 7. `<footer>` – Pie de página
+
+En esta parte incluyo:
+
+- Enlaces rápidos para moverse por la web
+- Información de contacto (email, dirección, teléfono)
+- Enlaces a redes sociales (Facebook, X, Instagram)
+
+El footer aparece en todas las páginas y mantiene el mismo diseño.
+
+
 ## FUNCIONAMIENTO DEL JS
 
 ### Gallery.js
@@ -369,3 +466,50 @@ document.querySelector(".google").addEventListener("click", () => {
 ```
 En definitiva
 ---
+
+# Ejemplos de Manipulación del DOM
+
+ 
+## Galería interactiva de imágenes
+
+Se crean nuevos elementos en el HTMl (section, img, h3, p, button) dinámicamente con el JS al introducir la URL de la imagen. Estos elementos se insertan en el DOM con el appendChild, y con el boton de elminiar, se eliminan del mismo
+
+### Codigo que lo demuestra: 
+```js
+
+function addImageToGallery(url, title = "", description = "") {
+      const container = document.createElement("section");
+      container.classList.add("gallery-item");
+    
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = title;
+      img.style.width = "200px";
+    
+      const titleElement = document.createElement("h3");
+      titleElement.textContent = title;
+    
+      const descElement = document.createElement("p");
+      descElement.textContent = description;
+    
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Eliminar";
+      deleteButton.classList.add("delete-btn");
+```
+### Y para eliminar:
+
+``` js
+    deleteButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que al hacer clic en eliminar se abra el modal
+        galleryContainer.removeChild(container);
+        savedImages = savedImages.filter(obj => obj.url !== url);
+        localStorage.setItem("galleryImages", JSON.stringify(savedImages));
+      });
+    }
+``` 
+
+# Demo funcional
+
+Puedes ver una versión funcional del proyecto aquí:  
+
+[https://Angelsito-cell.github.io/hells-vault/](https://Angelsito-cell.github.io/hells-vault/)
